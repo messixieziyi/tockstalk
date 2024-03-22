@@ -29,7 +29,7 @@ jobs:
           node-version-file: .node-version
           cache: npm
           cache-dependency-path: package-lock.json
-      - run: echo '${{ secrets.CYPRESS_ENV }}' > cypress.env.example.json
+      - run: echo '${{ secrets.CYPRESS_ENV }}' > cypress.env.json
         if: steps.last_status.outputs.last_status != 'success'
       - run: npm ci
         if: steps.last_status.outputs.last_status != 'success'
